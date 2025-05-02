@@ -86,6 +86,25 @@ contract Factory {
         Token(_token).transfer(msg.sender, _amount);
 
         emit Buy(_token, _amount);
+    }
 
+    function deposit(address _token) external {
+        Token token = Token(_token);
+        TokenSale memory sale = tokenToSale[_token];
+
+        require(sale.isOpen == false, "Factory: Target not reached");
+
+        token.transfer(sale.creator, token.balanceOf(address(this)));
+
+        (bool success, ) = payable(sale.creator).call{value: sale.raised}("");
+        require(success, "Factory: ETH transfer failed");
+    }
+
+    function withdraw(uint256 _amount) external {
+        require(msg.sender == owner, "Factory: Not owner");
+
+        (bool success, ) = payable(owner).call{value: _amount}(" ");
+        require(success, "Factory: ETH transfer failed");
+        
     }
 }
