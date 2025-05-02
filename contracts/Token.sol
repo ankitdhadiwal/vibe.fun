@@ -15,8 +15,7 @@ contract Token is ERC20{
     ) ERC20(_name, _symbol) {
         owner = payable (msg.sender);
         creator = _creator;
-
-
+        
         _mint(msg.sender, _totalSupply);
     }
 
