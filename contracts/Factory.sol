@@ -26,7 +26,6 @@ contract Factory {
     event Buy(address indexed token, uint256 amount);
 
 
-
     constructor(uint256 _fee) {
         fee = _fee;
         owner = msg.sender;
