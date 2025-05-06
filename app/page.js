@@ -8,6 +8,7 @@ import Header from "./components/Header"
 import List from "./components/List"
 import Token from "./components/Token"
 import Trade from "./components/Trade"
+// import Footer from "./components/footer"
 
 // ABIs & Config
 import Factory from "./abis/Factory.json"
@@ -130,6 +131,9 @@ export default function Home() {
           <Trade toggleTrade={toggleTrade} token={token} provider={provider} factory={factory} />
         )}
       </main>
+      {/* <Footer /> */}
     </div>
   );
 }
+
+
