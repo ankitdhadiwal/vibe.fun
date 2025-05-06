@@ -4,7 +4,7 @@ const nextConfig = {
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: 'pump.mypinata.cloud',
+                hostname: 'vibe.mypinata.cloud',
                 port: ''
             }
         ]

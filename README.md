@@ -1,4 +1,4 @@
-# fun.pump
+# vibe.fun
 
 ## Technology Stack & Tools
 
